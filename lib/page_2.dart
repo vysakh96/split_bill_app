@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatefulWidget {
   // const ResultPage({Key? key}) : super(key: key);
- double s;
- int c;
- int t;
- String n;
- ResultPage(this.s,this.c,this.t,this.n);
+  double s;
+  int c;
+  int t;
+  String n;
+  ResultPage(this.s, this.c, this.t, this.n);
   @override
   State<ResultPage> createState() => _ResultPageState();
 }
@@ -18,23 +18,29 @@ class _ResultPageState extends State<ResultPage> {
     super.initState();
     calculation();
   }
-  void calculation(){
+
+  void calculation() {
     setState(() {
-      double taxamount = (double.parse(widget.n)*widget.t)/100;
-      bill = (double.parse(widget.n)+taxamount+widget.c)/widget.s;
+      double taxamount = (double.parse(widget.n) * widget.t) / 100;
+      bill = (double.parse(widget.n) + taxamount + widget.c) / widget.s;
     });
   }
-  @override
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Align(alignment: Alignment.centerLeft,
-            child: Text('  Result',
-              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 30),),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '  Result',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 30),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -51,10 +57,16 @@ class _ResultPageState extends State<ResultPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Equally Divided',
-                          style: TextStyle(fontSize:25,fontWeight: FontWeight.bold),),
-                        Text('${bill.toStringAsFixed(2)}',
-                          style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
+                        Text(
+                          'Equally Divided',
+                          style: TextStyle(
+                              fontSize: 25, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          '${bill.toStringAsFixed(2)}',
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                     Row(
@@ -63,30 +75,44 @@ class _ResultPageState extends State<ResultPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Friends',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              'Friends',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
-                            Text('Tax',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              'Tax',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
-                            Text('Tip',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              'Tip',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
-                        SizedBox(width: 5,),
+                        SizedBox(
+                          width: 5,
+                        ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('${widget.s.round()}',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              '${widget.s.round()}',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
-                            Text('${widget.t}%',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              '${widget.t}%',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
-                            Text('${widget.c}',
-                              style: TextStyle(fontSize:25,fontWeight: FontWeight.bold ),
+                            Text(
+                              '${widget.c}',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -97,24 +123,35 @@ class _ResultPageState extends State<ResultPage> {
               ),
             ),
           ),
-         SizedBox(height: 20,),
-         Text('Everybody Should Pay ${bill.toStringAsFixed(2)}',
-           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Everybody Should Pay ${bill.toStringAsFixed(2)}',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Container(
               height: 50,
               width: double.maxFinite,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),color: Colors.orangeAccent),
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.orangeAccent),
               child: TextButton(
-                onPressed: (
-                    ){
+                onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('Calculate Again ?',
-                  style:TextStyle(fontSize: 30,color: Colors.black,fontWeight: FontWeight.bold) ,),
+                child: Text(
+                  'Calculate Again ?',
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),
@@ -123,4 +160,3 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 }
-

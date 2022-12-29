@@ -129,7 +129,7 @@ class _SplitBillState extends State<SplitBill> {
                 children: [
                   Expanded(flex: 2,
                     child: Container(
-                      height: 90,
+                      height: 91,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                         color: Colors.amberAccent,),
